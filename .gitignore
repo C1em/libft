@@ -1,2 +1,2 @@
-obj/*
-dep/*
+obj/*.o
+dep/*.d
