@@ -6,7 +6,7 @@
 #    By: cbenoit <cbenoit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 11:46:04 by coremart          #+#    #+#              #
-#    Updated: 2019/10/18 11:30:00 by cbenoit          ###   ########.fr        #
+#    Updated: 2019/10/31 20:36:57 by coremart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ _OBJS = $(_SRCS:.c=.o)
 OBJS = $(patsubst %,$(ODIR)/%,$(_OBJS))
 
 ## DEPENDENCIES ##
-DDIR = deps
+DDIR = dep
 _DEPS = $(_OBJS:.o=.d)
 DEPS = $(patsubst %,$(DDIR)/%,$(_DEPS))
 
