@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_pwr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coremart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 12:10:36 by coremart          #+#    #+#             */
-/*   Updated: 2018/11/16 12:46:32 by coremart         ###   ########.fr       */
+/*   Created: 2019/02/17 05:51:09 by coremart          #+#    #+#             */
+/*   Updated: 2019/02/17 06:12:29 by coremart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+unsigned long	ft_pwr(unsigned long nb, unsigned int exp)
 {
-	int i;
-
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	if (!exp)
+		return (1);
+	if (exp == 1)
+		return (nb);
+	if (exp % 2)
+		return (nb * ft_pwr(nb * nb, (exp - 1) / 2));
+	return (ft_pwr(nb * nb, exp / 2));
 }

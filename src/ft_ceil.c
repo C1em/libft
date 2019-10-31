@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_ceil.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coremart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 16:47:00 by coremart          #+#    #+#             */
-/*   Updated: 2018/11/16 13:46:23 by coremart         ###   ########.fr       */
+/*   Created: 2019/03/12 14:54:21 by coremart          #+#    #+#             */
+/*   Updated: 2019/03/12 14:56:23 by coremart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_ceil(float nb)
 {
-	if ((unsigned char*)src <= (unsigned char*)dst)
-		while (len--)
-			*((unsigned char*)dst + len) = *((unsigned char*)src + len);
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	if ((float)(int)nb == nb)
+		return ((int)nb);
+	return ((int)nb + 1);
 }

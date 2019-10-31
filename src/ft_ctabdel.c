@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_ctabdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coremart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlamart <tlamart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 15:16:55 by coremart          #+#    #+#             */
-/*   Updated: 2018/11/16 13:50:58 by coremart         ###   ########.fr       */
+/*   Created: 2019/08/21 12:25:47 by tlamart           #+#    #+#             */
+/*   Updated: 2019/08/21 14:55:10 by tlamart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_ctabdel(char **tab)
 {
-	while (n)
+	int		i;
+
+	i = 0;
+	while ((tab[i]))
 	{
-		*(unsigned char*)s = 0;
-		s++;
-		n--;
+		free((tab[i]));
+		(tab[i]) = NULL;
+		i++;
 	}
+	free(tab);
 }
